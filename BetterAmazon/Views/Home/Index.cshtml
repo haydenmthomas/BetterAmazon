@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IQueryable<Book>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To Better Amazon</h1>
+    <h2>View Dr. Hilton's Book Recommendations below</h2>
+    <br />
+    <!--Bootstrap table-->
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+            <tr>
+                <th scope="row">@x.BookID</th>
+                <td>@x.Title</td>
+                <td>@x.Author</td>
+                <td>@x.Publisher</td>
+                <td>@x.ISBN</td>
+                <td>@x.Category</td>
+                <td>$@x.Price</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
