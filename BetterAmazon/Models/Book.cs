@@ -15,8 +15,11 @@ namespace BetterAmazon.Models
         public int BookID { get; set; }
         [Required]
         public string Title { get; set; }
+        //Split up firstname and lastname of the author
         [Required]
-        public string Author { get; set; }
+        public string AuthorFirstName { get; set; }
+        [Required]
+        public string AuthorLastName { get; set; }
         [Required]
         public string Publisher { get; set; }
         [Required]
@@ -26,6 +29,9 @@ namespace BetterAmazon.Models
         public string ISBN { get; set; }
         [Required]
         public string Category { get; set; }
+        //Adds the number of pages for each book
+        [Required]
+        public int NumPages { get; set; }
         [Required]
         public double Price { get; set; }
     }

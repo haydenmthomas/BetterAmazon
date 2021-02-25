@@ -57,11 +57,15 @@ namespace BetterAmazon
 
             app.UseAuthorization();
 
+            //Redefines the URL's to make them a little nicer to navigate with
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "/P{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             //Used to seed the data

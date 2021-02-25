@@ -1,4 +1,5 @@
 ﻿using BetterAmazon.Models;
+using BetterAmazon.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,6 +17,8 @@ namespace BetterAmazon.Controllers
         //Sets the working repository then sets it in the public home controller
         private IBookRepository _repository;
 
+        public int PageSize = 5;
+
         public HomeController(ILogger<HomeController> logger, IBookRepository repository)
         {
             _logger = logger;
@@ -23,9 +26,25 @@ namespace BetterAmazon.Controllers
         }
 
         //Passes the repository with the book data
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View(_repository.Books);
+
+            //Allows us to return the page information based on what the user clicks on page
+            return View(new ProjectListViewModel
+            {
+                Books =_repository.Books
+                        .OrderBy(p => p.BookID)
+                        .Skip((page - 1) * PageSize)
+                        .Take(PageSize)
+                    ,
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _repository.Books.Count()
+                }
+            });
+                
         }
 
         public IActionResult Privacy()
