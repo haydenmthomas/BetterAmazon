@@ -26,14 +26,16 @@ namespace BetterAmazon.Controllers
         }
 
         //Passes the repository with the book data
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
 
             //Allows us to return the page information based on what the user clicks on page
+            //Passes categorical information for menu setup
             return View(new ProjectListViewModel
             {
                 Books =_repository.Books
-                        .OrderBy(p => p.BookID)
+                        .Where(b => category == null || b.Category == category)
+                        .OrderBy(b => b.BookID)
                         .Skip((page - 1) * PageSize)
                         .Take(PageSize)
                     ,
@@ -41,8 +43,10 @@ namespace BetterAmazon.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x => x.Category == category).Count()
+                },
+                Category = category
             });
                 
         }

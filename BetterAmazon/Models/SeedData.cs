@@ -30,7 +30,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
-                        Category = "Fiction, Classic",
+                        Classification = "Fiction",
+                        Category = "Classic",
                         NumPages = 1488,
                         Price = 9.95
                     },
@@ -42,7 +43,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Goodwin",
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
-                        Category = "Non-Fiction, Biography",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
                         NumPages = 944,
                         Price = 14.58
                     },
@@ -54,7 +56,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Schroeder",
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
-                        Category = "Non-Fiction, Biography",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
                         NumPages = 832,
                         Price = 21.54
                     },
@@ -66,7 +69,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "White",
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
-                        Category = "Non-Fiction, Biography",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
                         NumPages = 864,
                         Price = 11.61
                     },
@@ -78,7 +82,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Hillenbrand",
                         Publisher = "Random House",
                         ISBN = "978-0812974492",
-                        Category = "Non-Fiction, Historical",
+                        Classification = "Non-Fiction",
+                        Category = "Historical",
                         NumPages = 528,
                         Price = 13.33
                     },
@@ -90,7 +95,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Crichton",
                         Publisher = "Vintage",
                         ISBN = "978-0804171281",
-                        Category = "Fiction, Historical Fiction",
+                        Classification = "Fiction",
+                        Category = "Historical Fiction",
                         NumPages = 288,
                         Price = 15.95
                     },
@@ -102,7 +108,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Newport",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455586691",
-                        Category = "Non-Fiction, Self-Help",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
                         NumPages = 304,
                         Price = 14.99
                     },
@@ -114,7 +121,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Abrashoff",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455523023",
-                        Category = "Non-Fiction, Self-Help",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
                         NumPages = 240,
                         Price = 21.66
                     },
@@ -126,7 +134,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Branson",
                         Publisher = "Portfolio",
                         ISBN = "978-1591847984",
-                        Category = "Non-Fiction, Business",
+                        Classification = "Non-Fiction",
+                        Category = "Business",
                         NumPages = 400,
                         Price = 29.16
                     },
@@ -138,7 +147,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Grisham",
                         Publisher = "Bantam",
                         ISBN = "978-0553393613",
-                        Category = "Fiction, Thrillers",
+                        Classification = "Fiction",
+                        Category = "Thrillers",
                         NumPages = 642,
                         Price = 15.03
                     },
@@ -151,7 +161,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "McKeown",
                         Publisher = "Crown Publishing Group",
                         ISBN = "978-0804137409",
-                        Category = "Non-Fiction, Self-Help",
+                        Classification = "Non-Fiction",
+                        Category = "Self-Help",
                         NumPages = 288,
                         Price = 12.99
                     },
@@ -163,7 +174,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "Herbert",
                         Publisher = "Chilton Books",
                         ISBN = "978-0441172719",
-                        Category = "Fiction, Fantasy",
+                        Classification = "Fiction",
+                        Category = "Fantasy",
                         NumPages = 896,
                         Price = 9.59
                     },
@@ -175,7 +187,8 @@ namespace BetterAmazon.Models
                         AuthorLastName = "de Cervantes",
                         Publisher = "Penguin Classics",
                         ISBN = "978-0142437230",
-                        Category = "Fiction, Classic",
+                        Classification = "Fiction",
+                        Category = "Classic",
                         NumPages = 863,
                         Price = 15.30
                     }

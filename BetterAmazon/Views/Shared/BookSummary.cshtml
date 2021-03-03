@@ -1,0 +1,19 @@
+﻿@model Book
+
+<div class="card m-3">
+    <h5 class="card-header text-info">@Model.Title - @Model.AuthorFirstName @Model.AuthorLastName</h5>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <p>Publisher: @Model.Publisher</p>
+                <p>ISBN: @Model.ISBN</p>
+                <p>Price: $@Model.Price</p>
+            </div>
+            <div class="col-6">
+                <p>Classification: @Model.Classification</p>
+                <p>Category: @Model.Category</p>
+                <p>Number of Pages: @Model.NumPages</p>
+            </div>
+        </div>
+    </div>
+</div>

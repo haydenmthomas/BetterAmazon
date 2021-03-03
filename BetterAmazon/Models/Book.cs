@@ -28,6 +28,8 @@ namespace BetterAmazon.Models
             ErrorMessage = "Please enter in a valid ISBN in the format of '###-##########'")]
         public string ISBN { get; set; }
         [Required]
+        public string Classification { get; set; }
+        [Required]
         public string Category { get; set; }
         //Adds the number of pages for each book
         [Required]

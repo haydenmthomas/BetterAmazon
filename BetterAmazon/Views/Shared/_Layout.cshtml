@@ -34,7 +34,15 @@
             <div class="row m-1 p-1">
                 <div id="blah" class="col-4">
                     <h1 class="display-3">Welcome To Better Amazon</h1>
-                    <h2 class="text-light">View our book recommendation here</h2>
+                    <h2 class="text-light">
+                        View our book recommendation here
+                    </h2>
+                    <br />
+                    <h3>Filters:</h3>
+                    <div class="card p-3">
+                        <h4>Category</h4>
+                        <vc:navigation-menu />
+                    </div>
                 </div>
                 <div class="col-8">
                     @RenderBody()

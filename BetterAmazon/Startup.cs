@@ -60,8 +60,21 @@ namespace BetterAmazon
             //Redefines the URL's to make them a little nicer to navigate with
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    "pagination",
+
+                //Created 3 other endpoints for ease of viewing while cycling through pages and viewing based on category or page number
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "/{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
+                endpoints.MapControllerRoute("pagination",
                     "/P{page}",
                     new { Controller = "Home", action = "Index" });
 
