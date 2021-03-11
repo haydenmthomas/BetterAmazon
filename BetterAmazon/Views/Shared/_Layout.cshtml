@@ -6,6 +6,8 @@
     <title>@ViewData["Title"] - Better Amazon</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/85474e2967.js" crossorigin="anonymous"></script>
+    @*<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />*@
 </head>
 <body class="bg-info">
     <header>
@@ -25,6 +27,9 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                </div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
                 </div>
             </div>
         </nav>

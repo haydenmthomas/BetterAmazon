@@ -1,6 +1,7 @@
 using BetterAmazon.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,11 +31,21 @@ namespace BetterAmazon
             //Configues the connection string
             services.AddDbContext<BookDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:BetterAmazonConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BetterAmazonConnection"]);
             });
 
             //Sets the scope of the project
             services.AddScoped<IBookRepository, EFBookRepository>();
+
+            //Adds razor pages
+            services.AddRazorPages();
+
+            //Adds other important services for the rest of the site
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddHttpContextAccessor();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +63,9 @@ namespace BetterAmazon
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            //Allows us to use sessions.
+            app.UseSession();
 
             app.UseRouting();
 
@@ -79,6 +93,8 @@ namespace BetterAmazon
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
             //Used to seed the data
